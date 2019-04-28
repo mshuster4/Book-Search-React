@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import SearchBar from "./components/SearchBar";
-import API from "./utils/API"
+import API from "./utils/API";
+import Jumbotron from "./components/Jumbotron";
 import { BookList, BookListItem } from "./components/BookList";
 import { Container, Row, Col } from "./components/Grid";
+
 
 class App extends Component {
   state = {
@@ -43,38 +45,42 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
-        <Row>
-          <Col size="md-12">
-          <SearchBar
-                value={this.state.search}
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-              />
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
-              {!this.state.books.length ? (
-                <h1 className="text-center">No Books to Display</h1>
-              ) : (
-                <BookList>
-                  {this.state.books.map(book => {
-                    return (
-                      <BookListItem
-                        key={book.id}  
-                        title={book.volumeInfo.title}
-                        author={book.volumeInfo.authors}
-                        thumbnail={book.volumeInfo.imageLinks.thumbnail}
-                        plot={book.searchInfo.textSnippet}
-                      />
-                    );
-                  })}
-                </BookList>
-              )}
-          </Col>
-        </Row>
-      </Container>
+      <div>
+        <Jumbotron/>
+        <Container>
+          <Row>
+            <Col size="md-12">
+            <SearchBar
+                  value={this.state.search}
+                  handleInputChange={this.handleInputChange}
+                  handleFormSubmit={this.handleFormSubmit}
+                />
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-12">
+                {!this.state.books.length ? (
+                  <h1 className="text-center">No Books to Display</h1>
+                ) : (
+                  <BookList>
+                    {this.state.books.map(book => {
+                      return (
+                        <BookListItem
+                          key={book.id}  
+                          title={book.volumeInfo.title}
+                          author={book.volumeInfo.authors}
+                          thumbnail={book.volumeInfo.imageLinks.thumbnail}
+                          plot={book.searchInfo.textSnippet}
+                          href={book.volumeInfo.infoLink}
+                        />
+                      );
+                    })}
+                  </BookList>
+                )}
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
