@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+const mongoose = require("mongoose");
+const routes = require("./routes");
 const express = require("express");
 const path = require("path");
 
@@ -16,12 +18,14 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-
+app.use(routes);
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/readinglist");
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
