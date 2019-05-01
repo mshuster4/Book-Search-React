@@ -51,7 +51,7 @@ export function SavedBookListItem (props) {
              <button className="btn btn-success float-right">
                 <a rel="noreferrer noopener" target="_blank" href={props.href}>View</a>
               </button>
-              <button onClick={props.handleSaveBook} className="btn btn-success float-right">Delete</button>
+              <button onClick={props.handleDeleteBook} className="btn btn-success float-right">Delete</button>
           </Col>
         </Row>
         <Row>
