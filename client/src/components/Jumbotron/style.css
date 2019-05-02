@@ -1,0 +1,12 @@
+.jumbotron {
+    background-image: url("book-banner.jpg");
+    background-size: cover;
+    background-position: 100% 87%;
+}
+
+h1 {
+    font-family: republic-web, serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.25rem;
+}

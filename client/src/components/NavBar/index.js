@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom"
 import { Container } from "../Grid"
+import "./style.css"
 
 function NavBar() {
   return (
@@ -12,15 +13,15 @@ function NavBar() {
                 </button>
                     <Link className="navbar-brand" to="#">Reading Wishlist</Link>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li className="nav-item active">
+                    <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li className="nav-item">
                         <NavLink className="nav-link" to="/search">
-                            Search <span className="sr-only">(current)</span>
+                            Search Books <span className="sr-only">(current)</span>
                         </NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/saved">
-                            Saved
+                            Saved Books <span className="sr-only">(current)</span>
                         </NavLink>
                     </li>
                     </ul>

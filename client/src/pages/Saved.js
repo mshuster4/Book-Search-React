@@ -44,7 +44,7 @@ class Saved extends Component {
          <Row>
             <Col size="md-12">
                 {!this.state.books.length ? (
-                  <h1 className="text-center">No Books to Display</h1>
+                  <h2 className="text-center">No Books to Display</h2>
                 ) : (
                   <BookList>
                     {this.state.books.map(book => {

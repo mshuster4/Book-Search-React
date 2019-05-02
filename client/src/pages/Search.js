@@ -79,7 +79,9 @@ class Search extends Component {
                         <BookListItem
                           key={book.id}  
                           title={book.volumeInfo.title}
-                          author={book.volumeInfo.authors}
+                          author={book.volumeInfo.authors
+                                ? book.volumeInfo.authors.join(", ")
+                                : "N/A"}
                           thumbnail={book.volumeInfo.imageLinks.thumbnail}
                           plot={book.volumeInfo.description}
                           href={book.volumeInfo.infoLink}

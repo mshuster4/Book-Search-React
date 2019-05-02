@@ -1,0 +1,14 @@
+.btn.btn-default  {
+    background-color: #4a3437;
+    color: white;
+    margin-left: 1px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h6 {
+    margin-bottom: 15px;
+}
